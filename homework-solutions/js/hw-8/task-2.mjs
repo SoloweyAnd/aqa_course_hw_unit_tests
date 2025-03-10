@@ -17,16 +17,15 @@ const words = [
   'environment',
   'queue',
 ];
-
+const vowels = 'aeiou';
 function sortedByVowels(wordsArr) {
-  const vowels = 'aeiou';
-  function countVowels(word) {
-    return word
-      .toLowerCase()
-      .split('')
-      .reduce((count, letter) => (vowels.includes(letter) ? count + 1 : count), 0);
-  }
   return wordsArr.sort((a, b) => countVowels(a) - countVowels(b));
+}
+function countVowels(word) {
+  return word
+    .toLowerCase()
+    .split('')
+    .reduce((count, letter) => (vowels.includes(letter) ? count + 1 : count), 0);
 }
 
 export { sortedByVowels };

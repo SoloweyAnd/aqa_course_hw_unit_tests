@@ -36,6 +36,6 @@ let some;
 some = numbers.some((element) => element > 90);
 
 let every;
-every = numbers.every((element) => element === element.length);
+every = numbers.every((element) => element >= 10 && element <= 99);
 
 export { forEach, map, filter, find, sort, reduce, some, every };
