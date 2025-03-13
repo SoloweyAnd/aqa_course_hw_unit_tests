@@ -11,7 +11,7 @@ qa = {
   age: 31,
   salary: 1000,
   getInfo(greetingsWord) {
-    return `${greetingsWord}, my name is ${this.name}, i'm ${this.age} and my salary is ${this.salary}`;
+    return `${greetingsWord}, my name is ${this.name}, I'm ${this.age} and my salary is ${this.salary}`;
   },
 };
 
@@ -52,18 +52,13 @@ applyResult = qa.getInfo.apply(anotherQa, ['Hey']);
 function createCounter() {
   let count = 0;
 
-  return function () {
+  return () => {
     count++;
     console.log(`Function was called ${count} times`);
+    return count;
   };
 }
 
 const functionCallCounter = createCounter();
-
-functionCallCounter();
-functionCallCounter();
-functionCallCounter();
-functionCallCounter();
-functionCallCounter();
 
 export { qa, bindResult, callResult, applyResult, functionCallCounter, anotherQa };

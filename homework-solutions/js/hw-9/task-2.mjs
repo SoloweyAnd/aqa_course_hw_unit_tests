@@ -24,7 +24,7 @@ addCharacter({ name: 'Sidney', age: 46 });
 console.log(characters);
 
 function getCharacter(name) {
-  return characters.find((character) => character.name === name);
+  return characters.find((character) => character.name === name) || undefined;
 }
 const result2 = getCharacter;
 console.log(result2('Barney'));

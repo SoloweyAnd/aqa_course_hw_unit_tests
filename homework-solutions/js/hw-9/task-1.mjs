@@ -20,6 +20,8 @@ stringValues = Object.values(character).filter((value) => typeof value === 'stri
 /* Do not touch this part */
 const logSpy = jest.spyOn(console, 'log');
 // ---
+
+// Ваш код
 let keyValuePairs = Object.entries(character);
 for (const [key, value] of keyValuePairs) {
   console.log(`key = ${key}, value = ${value}`);
