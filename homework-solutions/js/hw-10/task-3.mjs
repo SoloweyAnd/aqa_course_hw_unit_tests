@@ -16,11 +16,23 @@
 */
 
 function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 function uniqueRandomGenerator(n) {
-  // Ваш код
+  if (n === 0) return () => 'All numbers were received';
+
+  let numbers = [];
+  for (let i = 1; i <= n; i++) {
+    numbers.push(i);
+  }
+
+  return () => {
+    if (numbers.length === 0) return 'All numbers were received';
+
+    let randomIndex = getRandomArbitrary(0, numbers.length);
+    return numbers.splice(randomIndex, 1)[0];
+  };
 }
 
 export { uniqueRandomGenerator };
